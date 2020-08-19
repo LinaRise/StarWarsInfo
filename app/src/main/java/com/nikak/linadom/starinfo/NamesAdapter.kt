@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.nikak.linadom.starinfo.entity.Planet
 
-class NamesAdapter(private val numberItems: Int) : RecyclerView.Adapter<NamesAdapter.NumberViewHolder>() {
+class NamesAdapter(private val planetsList: List<Planet>) : RecyclerView.Adapter<NamesAdapter.NumberViewHolder>() {
 
     init {
         viewHolderCount = 0
@@ -19,7 +20,7 @@ class NamesAdapter(private val numberItems: Int) : RecyclerView.Adapter<NamesAda
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(layoutIdForListItem, parent, false)
         val viewHolder = NumberViewHolder(view)
-        viewHolder.viewHolderIndex.text = "ViewHolder $viewHolderCount"
+//        viewHolder.viewHolderIndex.text = "ViewHolder $viewHolderCount"
         viewHolderCount++
         return viewHolder
     }
@@ -29,7 +30,7 @@ class NamesAdapter(private val numberItems: Int) : RecyclerView.Adapter<NamesAda
     }
 
     override fun getItemCount(): Int {
-        return numberItems
+        return planetsList.size
     }
 
     inner class NumberViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,8 +39,11 @@ class NamesAdapter(private val numberItems: Int) : RecyclerView.Adapter<NamesAda
 
         fun bind(listIndex: Int) {
             listItemNameView.text = listIndex.toString()
+            viewHolderIndex.text = planetsList[listIndex].name
+
         }
     }
+
 
     companion object {
 
