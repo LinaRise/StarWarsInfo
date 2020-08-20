@@ -11,10 +11,13 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.nikak.linadom.starinfo.entity.Planet
 import android.content.ClipData.Item
+import android.graphics.Color
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.DiffUtil
 import android.widget.Toast
 import androidx.annotation.NonNull
+import androidx.cardview.widget.CardView
 
 
 class PlanetNamesAdapter internal constructor(private val mCtx: Context) :
@@ -24,8 +27,12 @@ class PlanetNamesAdapter internal constructor(private val mCtx: Context) :
         val planet = getItem(position)
 
         if (planet != null) {
-            holder.listItemNameView.text = position.toString()
+//            holder.listItemNameView.text = position.toString()
             holder.viewHolderIndex.text = planet.name
+
+
+
+
         } else {
             Toast.makeText(mCtx, "Planet is null", Toast.LENGTH_LONG).show()
         }
@@ -45,8 +52,10 @@ class PlanetNamesAdapter internal constructor(private val mCtx: Context) :
 
     inner class PlanetNameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var listItemNameView: TextView = itemView.findViewById(R.id.name_item_tv)
-        var viewHolderIndex: TextView = itemView.findViewById(R.id.view_holder_number_tv)
+        //        var listItemNameView: TextView = itemView.findViewById(R.id.name_item_tv)
+        var cardView: CardView = itemView.findViewById(R.id.cv)
+        var viewHolderIndex: TextView = itemView.findViewById(R.id.view_holder_name_tv)
+
 
 //        fun bind(listIndex: Int) {
 //            listItemNameView.text = listIndex.toString()

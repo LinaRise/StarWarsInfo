@@ -1,32 +1,19 @@
 package com.nikak.linadom.starinfo
 
 
-import android.content.ClipData
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.nikak.linadom.starinfo.entity.Model
 import com.nikak.linadom.starinfo.entity.Planet
-import com.nikak.linadom.starinfo.service.ApiService
 import com.nikak.linadom.starinfo.service.PlanetViewModel
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import okhttp3.OkHttpClient
-import android.content.ClipData.Item
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.observe
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -93,6 +80,7 @@ class PlanetsFragment : androidx.fragment.app.Fragment() {
 
 
         recyclerView = view.findViewById(R.id.planet_names_RV) as RecyclerView
+
         var linearLayoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = linearLayoutManager
 

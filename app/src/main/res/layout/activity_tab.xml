@@ -9,6 +9,10 @@
 
     <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
             android:layout_marginStart="1dp"
             android:layout_marginRight="1dp"
             android:layout_marginLeft="1dp"
@@ -16,14 +20,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_height="52dp" tools:layout_editor_absoluteY="8dp" tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" tools:layout_editor_absoluteX="8dp"
             android:id="@+id/tabBar">
 
         <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:id="@+id/PlanetsTab"
                 android:text="Planets"/>
-        <com.google.android.material.tabs.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content"
+        <com.google.android.material.tabs.TabItem android:layout_width="wrap_content"
+                                                  android:layout_height="wrap_content"
                                                   android:id="@+id/StatisticsTab"
                                                   android:text="Statistics"/>
 
@@ -31,8 +36,10 @@
 
     <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager2"
-            android:layout_height="0dp"
-            android:layout_width="match_parent">
+            android:layout_marginTop="48dp"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+    >
 
     </androidx.viewpager2.widget.ViewPager2>
 </androidx.constraintlayout.widget.ConstraintLayout>
