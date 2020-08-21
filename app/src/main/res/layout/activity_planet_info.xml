@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PlanetInfoActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                       android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/linear1">
+            <TextView
+                    android:text="Name"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/planet_name_tv_label"/>
+            <TextView
+
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/planet_name_tv"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/linear2"
+                      app:layout_constraintTop_toBottomOf="@+id/linear1">
+            <TextView
+                    android:text="Rotation period"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/rotationPeriod_tv_label"/>
+            <TextView
+
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/rotationPeriod_tv"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear2" android:id="@+id/linear3">
+            <TextView
+                    android:text="Orbital period"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/orbitalPeriod_tv_label"/>
+            <TextView
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/orbitalPeriod_tv"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear3" android:id="@+id/linear4">
+            <TextView
+                    android:text="Diameter"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/diameter_tv_label"/>
+            <TextView
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/diameter_tv"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear4" android:id="@+id/linear5">
+            <TextView
+                    android:text="Climate"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/climate_tv_label"/>
+            <TextView
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/climate_tv"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear5" android:id="@+id/linear6">
+            <TextView
+                    android:text="Gravity"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/gravity_tv_label"/>
+            <TextView
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/gravity_tv"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear6" android:id="@+id/linear7">
+            <TextView
+                    android:text="Terrain"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/terrain_tv_label"/>
+            <TextView
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/terrain_tv"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear7" android:id="@+id/linear8">
+            <TextView
+                    android:text="Surface water"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/surfaceWater_yv_label"/>
+            <TextView
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/surfaceWater_tv"/>
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear8" android:id="@+id/linear9">
+            <TextView
+                    android:text="Population"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/population_tv_label"/>
+            <TextView
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/population_tv"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear9" android:id="@+id/linear10">
+            <TextView
+                    android:text="Residents"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/residents_tv_label"/>
+            <TextView
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/residents_tv"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear10" android:id="@+id/linear11">
+            <TextView
+                    android:text="Films"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/films_tv_label"/>
+            <TextView
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/films_tv"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear11" android:id="@+id/linear12">
+            <TextView
+                    android:text="Created"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/created_tv_label"/>
+            <TextView
+                    android:layout_width="135dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/created_tv"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear12" android:id="@+id/linear13">
+            <TextView
+                    android:text="Edited"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/edited_tv_label"/>
+            <TextView
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/edited_tv"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@+id/linear13" android:id="@+id/linear14">
+            <TextView
+                    android:text="Url"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="30dp" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/url_tv_label"/>
+            <TextView
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="56dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/url_tv"/>
+
+        </LinearLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+

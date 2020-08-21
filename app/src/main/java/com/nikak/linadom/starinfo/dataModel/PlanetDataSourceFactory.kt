@@ -8,18 +8,13 @@ import com.nikak.linadom.starinfo.entity.Planet
 
 class PlanetDataSourceFactory : DataSource.Factory<Int,Planet>() {
 
-    //creating the mutable live data
-    //getter for itemlivedatasource
+    //создаем the mutable live data
     val itemLiveDataSource = MutableLiveData<PageKeyedDataSource<Int, Planet>>()
 
    override fun create(): DataSource<Int, Planet> {
-        //getting our data source object
+        //получае наш объект
         val itemDataSource = PlanetDataSource()
-
-        //posting the datasource to get the values
         itemLiveDataSource.postValue(itemDataSource)
-
-        //returning the datasource
         return itemDataSource
     }
 }

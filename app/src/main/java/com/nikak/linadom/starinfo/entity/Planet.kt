@@ -2,51 +2,52 @@ package com.nikak.linadom.starinfo.entity
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
-class Planet (
+class Planet(
 
     @SerializedName("name")
     @Expose
-    var name: String? ,
+    var name: String?,
     @SerializedName("rotation_period")
     @Expose
-    var rotationPeriod: String? ,
+    var rotationPeriod: String?,
     @SerializedName("orbital_period")
     @Expose
-    var orbitalPeriod: String? ,
+    var orbitalPeriod: String?,
     @SerializedName("diameter")
     @Expose
-    var diameter: String? ,
+    var diameter: String?,
     @SerializedName("climate")
     @Expose
-    var climate: String? ,
+    var climate: String?,
     @SerializedName("gravity")
     @Expose
-    var gravity: String? ,
+    var gravity: String?,
     @SerializedName("terrain")
     @Expose
-    var terrain: String? ,
+    var terrain: String?,
     @SerializedName("surface_water")
     @Expose
-    var surfaceWater: String? ,
+    var surfaceWater: String?,
     @SerializedName("population")
     @Expose
-    var population: String? ,
+    var population: String?,
     @SerializedName("residents")
     @Expose
-    var residents: List<String>? ,
+    var residents: List<String>?,
     @SerializedName("films")
     @Expose
-    var films: List<String>? ,
+    var films: List<String>?,
     @SerializedName("created")
     @Expose
-    var created: String? ,
+    var created: String?,
     @SerializedName("edited")
     @Expose
-    var edited: String? ,
+    var edited: String?,
     @SerializedName("url")
     @Expose
     var url: String?
 
-)
+) : Serializable

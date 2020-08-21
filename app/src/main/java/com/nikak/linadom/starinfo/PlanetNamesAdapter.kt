@@ -11,13 +11,22 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.nikak.linadom.starinfo.entity.Planet
 import android.content.ClipData.Item
+import android.content.Intent
 import android.graphics.Color
+import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.DiffUtil
 import android.widget.Toast
 import androidx.annotation.NonNull
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
+import androidx.fragment.app.FragmentTransaction
+import com.google.android.material.tabs.TabLayout
+import com.nikak.linadom.starinfo.fragment.PlanetInfoFragment
+import com.nikak.linadom.starinfo.fragment.PlanetsFragment
+import androidx.core.content.ContextCompat.startActivity
 
 
 class PlanetNamesAdapter internal constructor(private val mCtx: Context) :
@@ -30,7 +39,22 @@ class PlanetNamesAdapter internal constructor(private val mCtx: Context) :
 //            holder.listItemNameView.text = position.toString()
             holder.viewHolderIndex.text = planet.name
 
+            val onCardViewSelectedListener = View.OnClickListener {
+                val intent = Intent(it.context, PlanetInfoActivity::class.java)
+                intent.putExtra("planetInfo", planet)
+                it.context.startActivity(intent)
 
+//                Toast.makeText(mCtx, planet.name,Toast.LENGTH_SHORT).show()
+//                val appCompatActivity = mCtx as AppCompatActivity
+//                val planetInfoFragment = PlanetInfoFragment()
+//                appCompatActivity.supportFragmentManager
+//                    .beginTransaction()
+//                    .add(R.id.frameLayout_cv,planetInfoFragment)
+//
+//                    .addToBackStack(null)
+//                    .commit()
+            }
+            holder.cardView.setOnClickListener(onCardViewSelectedListener)
 
 
         } else {
@@ -44,9 +68,10 @@ class PlanetNamesAdapter internal constructor(private val mCtx: Context) :
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(layoutIdForListItem, parent, false)
         val viewHolder = PlanetNameViewHolder(view)
-//        viewHolder.viewHolderIndex.text = "ViewHolder $viewHolderCount"
-//        viewHolderCount++
+
+
         return viewHolder
+
     }
 
 

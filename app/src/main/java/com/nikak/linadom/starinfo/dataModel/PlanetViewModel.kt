@@ -14,24 +14,24 @@ import com.nikak.linadom.starinfo.entity.Planet
 
 class PlanetViewModel : ViewModel() {
 
-    //creating livedata for PagedList  and PagedKeyedDataSource
+    //создаем livedata для PagedList  and PagedKeyedDataSource
     internal var itemPagedList: LiveData<PagedList<Planet>>
     internal var liveDataSource: LiveData<PageKeyedDataSource<Int, Planet>>
 
-    //constructor
+
     init {
-        //getting our data source factory
+        //инициализируем data source factory
         val planetDataSourceFactory = PlanetDataSourceFactory()
 
-        //getting the live data source from data source factory
+        //получаем live data source из data source factory
         liveDataSource = planetDataSourceFactory.itemLiveDataSource
 
-        //Getting PagedList config
+        //настройки PagedList
         val pagedListConfig = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
             .setPageSize(PlanetDataSource.PAGE_SIZE).build()
 
-        //Building the paged list
+        //создаем PagedList
         itemPagedList = LivePagedListBuilder(planetDataSourceFactory, pagedListConfig)
             .build()
     }

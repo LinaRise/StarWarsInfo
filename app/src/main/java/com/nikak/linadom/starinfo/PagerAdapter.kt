@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.nikak.linadom.starinfo.fragment.PlanetsFragment
 
 class PagerAdapter(fm: FragmentActivity, private var tabCount: Int) : FragmentStateAdapter(fm) {
 

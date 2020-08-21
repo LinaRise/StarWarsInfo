@@ -12,11 +12,12 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
+//PageKeyedDataSource - так как нам нужно предосталять номер страницы для получения данных
+//то есть здаесь номер старницы становится ключом нашей старнцицы
 class PlanetDataSource : PageKeyedDataSource<Int, Planet>() {
 
 
-    //this will be called once to load the initial data
+    //вывзвается 1 раз для загрузки первой страницы
     override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, Planet>) {
         RetrofitClient.instance.api.getAllPlanets(FIRST_PAGE)
             .enqueue(object : Callback<Model> {
@@ -32,7 +33,7 @@ class PlanetDataSource : PageKeyedDataSource<Int, Planet>() {
             })
     }
 
-    //this will load the previous page
+    //загрузка предыдущей страницы
     override fun loadBefore(
         params: PageKeyedDataSource.LoadParams<Int>,
         callback: PageKeyedDataSource.LoadCallback<Int, Planet>
@@ -41,14 +42,12 @@ class PlanetDataSource : PageKeyedDataSource<Int, Planet>() {
             .enqueue(object : Callback<Model> {
                 override fun onResponse(call: Call<Model>, response: Response<Model>) {
 
-                    //if the current page is greater than one
-                    //we are decrementing the page number
-                    //else there is no previous page
+                    //если текущая траница больше 1
+                   // то уменьшаем текущую страницу на 1
                     val adjacentKey = if (params.key > 1) params.key - 1 else null
                     if (response.body() != null) {
 
-                        //passing the loaded data
-                        //and the previous page key
+                       //отдаем инфу и ключ предыдущей страницы
                         callback.onResult(response.body()?.planets!!, adjacentKey)
                     }
                 }
@@ -69,11 +68,10 @@ class PlanetDataSource : PageKeyedDataSource<Int, Planet>() {
                 override fun onResponse(call: Call<Model>, response: Response<Model>) {
 
                     if (response.body() != null) {
-                        //if the response has next page
-                        //incrementing the next page number
+                        //если есть следующая стрница, то ув ключ на 1
                         val key = if (response.body()!!.next != null) params.key + 1 else null
 
-                        //passing the loaded data and next page value
+                     //передаме данные и новый ключ
                         callback.onResult(response.body()?.planets!!, key)
                     }
                 }
@@ -86,12 +84,11 @@ class PlanetDataSource : PageKeyedDataSource<Int, Planet>() {
 
     companion object {
 
-        //the size of a page that we want
+        //сколько хотим на странице отображать
         val PAGE_SIZE = 10
 
-        //we will start from the first page which is 1
+        //первая сттраница
         private val FIRST_PAGE = 1
-        //we need to fetch from stackoverflow
-        private val SITE_NAME = "stackoverflow"
+
     }
 }

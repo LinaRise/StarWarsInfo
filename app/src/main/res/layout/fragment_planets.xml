@@ -3,8 +3,9 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+             android:id="@+id/frameLayout_rv"
 
-             tools:context=".PlanetsFragment">
+             tools:context="fragment.PlanetsFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
